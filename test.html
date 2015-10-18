@@ -1,30 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<style type="text/css">
-			h1 {
-				color:red;
-				text-align:center;
-			}
-		</style>
+<head>
+	<meta content="text/html"; charset=utf-8>
 		<script>
-			function displayDate()
-			{
-				document.getElementById("demo").innerHTML=Date();
+			window.onload = function() {
+				var habit = document.getElementsByName('habit');
+				var result = document.getElementById('result');
+				for(n in habit.value) {
+					habit.value.onClick = function() {
+						result.innerHTML += habit(n).value + '<br>';
+					}
+				}
 			}
-
-			document.write("<h1>这是一个标题</h1>");
-			document.write("<h2 color=red>这是另一个标题</h1>");
 		</script>
-	</head>
-
+</head>
+<html>
 	<body>
-		<h1><font color="red">我的第一个 JavaScript 程序</font></h1>
-		<p id="demo">这是一个段落</p>
-
-		<button type="button" onclick="displayDate()">
-			显示日期
-		</button> 
+		<input type="CHECKBOX" name="habit" value="登山">登山<br>
+		<input type="CHECKBOX" name="habit" value="游泳">游泳<br>
+		<input type="CHECKBOX" name="habit" value="滑雪">滑雪<br>
+		<input type="CHECKBOX" name="habit" value="跑步">跑步<br>
+		<input type="CHECKBOX" name="habit" value="学习">学习<br>
+		<input type="CHECKBOX" name="habit" value="马拉松">马拉松<br>
+		<br>
+		<div id="result"></div>
 	</body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN" "http://www.w3.org/TR/REC-html40/frameset.dtd">
+<meta charset="utf-8">
+<head>
+	<script>
+	function add() {
+		var list = document.getElementById('list');
+		var text = document.createTextNode('New list element');
+		var li = document.createElement('li');
+		li.appendChild(text);
+		list.appendChild(li);
+	}
+
+	function del() {
+		var list = document.getElementById('list');
+		var child = list.firstChild;
+		list.removeChild(child);
+	}
+	</script>
+</head>
+
+<body>
+	<button onclick="add()">添加</button>
+	<br>
+	<div id="main">
+		<ul id="list">
+		</ul>
+	</div>
+	<br>
+	<button onclick="del()">删除</button>
+</body>
